@@ -1,0 +1,27 @@
+{
+    "name": "tswiackiewicz/phpers-summit-2019",
+    "type": "project",
+    "description": "Sample application for PHPers Summit 2019 presentation",
+    "keywords": [
+        "phpers",
+        "ddd"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tomasz Świacko-Świackiewicz",
+            "email": "tomasz.swiacko.swiackiewicz@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=7.1",
+        "ramsey/uuid": "^3.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "TSwiackiewicz\\PHPersSummit\\": "src/"
+        }
+    }
+}
