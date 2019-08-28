@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace TSwiackiewicz\PHPersSummit\Beer\Application\Command;
 
-use TSwiackiewicz\PHPersSummit\Beer\Domain\Comment\Comment;
+use TSwiackiewicz\PHPersSummit\Beer\Domain\Comment\BeerComment;
 use TSwiackiewicz\PHPersSummit\Beer\Shared\BeerId;
 use TSwiackiewicz\PHPersSummit\Shared\Uuid;
 use TSwiackiewicz\PHPersSummit\User\Application\UserService;
@@ -25,9 +25,9 @@ class BeerCommandFactory
 
         return new AddComment(
             BeerId::fromUuid(new Uuid($command['beerId'])),
-            $user->uuid(),
-            $command['login'],
-            new Comment($command['comment'])
+            new BeerComment($command['comment']),
+            $user->userId(),
+            $command['login']
         );
     }
 }

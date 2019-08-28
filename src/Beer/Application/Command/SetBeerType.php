@@ -29,13 +29,13 @@ class SetBeerType
         return $this->beerId;
     }
 
-    public function username(): string
-    {
-        return $this->username;
-    }
-
     public function type(): string
     {
         return $this->type;
+    }
+
+    public function username(): string
+    {
+        return $this->username;
     }
 }
