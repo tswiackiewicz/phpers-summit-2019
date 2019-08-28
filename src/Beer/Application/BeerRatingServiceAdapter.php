@@ -9,7 +9,10 @@ use TSwiackiewicz\PHPersSummit\Beer\Shared\BeerException;
 use TSwiackiewicz\PHPersSummit\Beer\Shared\BeerId;
 use TSwiackiewicz\PHPersSummit\Rating\RatingService;
 
-class RatingServiceAdapter implements BeerRating
+/**
+ * Adapter for legacy rating service
+ */
+class BeerRatingServiceAdapter implements BeerRating
 {
     /** @var RatingService */
     private $ratingService;
@@ -47,5 +50,4 @@ class RatingServiceAdapter implements BeerRating
         // TODO: Implement avgRating() method.
         return 0;
     }
-
 }
