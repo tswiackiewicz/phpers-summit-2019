@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace TSwiackiewicz\PHPersSummit\Beer\Domain\Comment;
 
-class Comment
+class BeerComment
 {
     /** @var string */
     private $comment;
