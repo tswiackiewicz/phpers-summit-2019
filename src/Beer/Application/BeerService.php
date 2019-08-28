@@ -34,7 +34,9 @@ class BeerService
         $user = $this->userService->forUsername($command->username());
 
         $beer = $this->repository->getById($command->beerId());
-        $beer->setType($command->type(), $user->premium());
+        $beer->setType($command->type(), $user->admin());
+
+        $this->repository->store($beer);
     }
 
     /**
@@ -47,9 +49,13 @@ class BeerService
         $beer->rate($command->rating());
     }
 
+    /**
+     * @param AddComment $command
+     * @throws BeerException
+     */
     public function addComment(AddComment $command): void
     {
         $beer = $this->repository->getById($command->beerId());
-        $beer->addComment($command->userId(), $command->username(), $command->comment());
+        $beer->addComment($command->comment(), $command->userId(), $command->username());
     }
 }
