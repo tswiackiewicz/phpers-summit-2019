@@ -14,24 +14,24 @@ use TSwiackiewicz\PHPersSummit\Shared\Uuid;
 class UserDTO
 {
     /** @var Uuid */
-    private $uuid;
+    private $userId;
 
     /** @var Email */
     private $login;
 
     /** @var bool */
-    private $premium;
+    private $admin;
 
-    public function __construct(Uuid $uuid, Email $login, bool $premium = false)
+    public function __construct(Uuid $userId, Email $login, bool $admin = false)
     {
-        $this->uuid = $uuid;
+        $this->userId = $userId;
         $this->login = $login;
-        $this->premium = $premium;
+        $this->admin = $admin;
     }
 
-    public function uuid(): Uuid
+    public function userId(): Uuid
     {
-        return $this->uuid;
+        return $this->userId;
     }
 
     public function login(): Email
@@ -39,8 +39,8 @@ class UserDTO
         return $this->login;
     }
 
-    public function premium(): bool
+    public function admin(): bool
     {
-        return $this->premium;
+        return $this->admin;
     }
 }
