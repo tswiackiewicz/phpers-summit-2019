@@ -14,4 +14,9 @@ class DbBeerRepository implements BeerRepository
     {
         // TODO: Implement getById() method.
     }
+
+    public function store(Beer $beer): void
+    {
+        // store beer's type at shared (between beer & type) database
+    }
 }
