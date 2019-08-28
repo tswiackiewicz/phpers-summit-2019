@@ -7,6 +7,9 @@ namespace TSwiackiewicz\PHPersSummit\Beer\Domain;
 use TSwiackiewicz\PHPersSummit\Beer\Shared\BeerException;
 use TSwiackiewicz\PHPersSummit\Beer\Shared\BeerId;
 
+/**
+ * Domain concept representing rating (score) of given beer
+ */
 interface BeerRating
 {
     /**

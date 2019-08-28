@@ -5,8 +5,7 @@ declare(strict_types=1);
 namespace TSwiackiewicz\PHPersSummit\Beer\Domain;
 
 use TSwiackiewicz\PHPersSummit\Beer\Domain\Comment\BeerComments;
-use TSwiackiewicz\PHPersSummit\Beer\Domain\Comment\Comment;
-use TSwiackiewicz\PHPersSummit\Beer\Domain\Type\BeerType;
+use TSwiackiewicz\PHPersSummit\Beer\Domain\Comment\BeerComment;
 use TSwiackiewicz\PHPersSummit\Beer\Shared\BeerException;
 use TSwiackiewicz\PHPersSummit\Beer\Shared\BeerId;
 use TSwiackiewicz\PHPersSummit\Shared\Uuid;
@@ -35,13 +34,13 @@ class Beer
 
     /**
      * @param string $type
-     * @param bool $premiumUser
+     * @param bool $admin
      * @throws BeerException
      */
-    public function setType(string $type, bool $premiumUser): void
+    public function setType(string $type, bool $admin): void
     {
-        if (!$premiumUser) {
-            throw BeerException::notAllowedForNotPremiumUsers();
+        if (!$admin) {
+            throw BeerException::notAllowedForNotAdminUsers();
         }
 
         $this->type->setType($type);
@@ -56,8 +55,24 @@ class Beer
         $this->rating->rate($this->id, $rating);
     }
 
-    public function addComment(Uuid $userId, string $username, Comment $comment): void
+    /**
+     * @param BeerComment $comment
+     * @param Uuid $userId
+     * @param string $username
+     * @throws BeerException
+     */
+    public function addComment(BeerComment $comment, Uuid $userId, string $username): void
     {
-        $this->comments->add($userId, $username, $comment);
+        $this->comments->add($comment, $userId, $username);
+    }
+
+    public function id(): BeerId
+    {
+        return $this->id;
+    }
+
+    public function type(): BeerType
+    {
+        return $this->type;
     }
 }
