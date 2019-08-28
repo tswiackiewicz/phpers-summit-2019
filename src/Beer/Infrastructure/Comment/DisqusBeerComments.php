@@ -4,19 +4,28 @@ declare(strict_types=1);
 
 namespace TSwiackiewicz\PHPersSummit\Beer\Infrastructure\Comment;
 
+use TSwiackiewicz\PHPersSummit\Beer\Domain\Comment\BeerComment;
 use TSwiackiewicz\PHPersSummit\Beer\Domain\Comment\BeerComments;
-use TSwiackiewicz\PHPersSummit\Beer\Domain\Comment\Comment;
+use TSwiackiewicz\PHPersSummit\Beer\Shared\BeerException;
 use TSwiackiewicz\PHPersSummit\Shared\Uuid;
 
 /**
  * Sample implementation of BeerComments interface
  * Data is passed and retrieved from disqus.com using provided API
  */
-class DisqusBeerComments implements BeerComments
+class DisqusBeerComments extends BeerComments
 {
-    public function add(Uuid $userId, string $username, Comment $comment): void
+    /**
+     * @param BeerComment $comment
+     * @param Uuid $userId
+     * @param string $username
+     * @throws BeerException
+     */
+    public function add(BeerComment $comment, Uuid $userId, string $username): void
     {
         // add new comment using disqus.com API
+
+        throw BeerException::commentFailure($this->beerId);
     }
 
     public function count(): int
