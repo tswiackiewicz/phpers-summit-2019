@@ -4,9 +4,7 @@ declare(strict_types=1);
 
 namespace TSwiackiewicz\PHPersSummit\Beer\Application;
 
-use TSwiackiewicz\PHPersSummit\Beer\Application\Command\AddComment;
-use TSwiackiewicz\PHPersSummit\Beer\Application\Command\RateBeer;
-use TSwiackiewicz\PHPersSummit\Beer\Application\Command\SetBeerType;
+use TSwiackiewicz\PHPersSummit\Beer\Application\Command\{AddComment, RateBeer, SetBeerType};
 use TSwiackiewicz\PHPersSummit\Beer\Shared\BeerException;
 use TSwiackiewicz\PHPersSummit\User\Application\UserService;
 

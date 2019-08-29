@@ -4,8 +4,7 @@ declare(strict_types=1);
 
 namespace TSwiackiewicz\PHPersSummit\User\Application;
 
-use TSwiackiewicz\PHPersSummit\Shared\Email;
-use TSwiackiewicz\PHPersSummit\Shared\Uuid;
+use TSwiackiewicz\PHPersSummit\Shared\{Email, Uuid};
 
 /**
  * Template of UserDTO class

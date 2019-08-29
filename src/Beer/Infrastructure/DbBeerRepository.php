@@ -4,8 +4,7 @@ declare(strict_types=1);
 
 namespace TSwiackiewicz\PHPersSummit\Beer\Infrastructure;
 
-use TSwiackiewicz\PHPersSummit\Beer\Domain\Beer;
-use TSwiackiewicz\PHPersSummit\Beer\Domain\BeerRepository;
+use TSwiackiewicz\PHPersSummit\Beer\Domain\{Beer, BeerRepository};
 use TSwiackiewicz\PHPersSummit\Beer\Shared\BeerId;
 
 class DbBeerRepository implements BeerRepository

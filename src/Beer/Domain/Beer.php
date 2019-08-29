@@ -4,10 +4,8 @@ declare(strict_types=1);
 
 namespace TSwiackiewicz\PHPersSummit\Beer\Domain;
 
-use TSwiackiewicz\PHPersSummit\Beer\Domain\Comment\BeerComments;
-use TSwiackiewicz\PHPersSummit\Beer\Domain\Comment\BeerComment;
-use TSwiackiewicz\PHPersSummit\Beer\Shared\BeerException;
-use TSwiackiewicz\PHPersSummit\Beer\Shared\BeerId;
+use TSwiackiewicz\PHPersSummit\Beer\Domain\Comment\{BeerComment, BeerComments};
+use TSwiackiewicz\PHPersSummit\Beer\Shared\{BeerException, BeerId};
 use TSwiackiewicz\PHPersSummit\Shared\Uuid;
 
 class Beer
@@ -27,8 +25,13 @@ class Beer
     /** @var BeerRepository */
     private $repository;
 
-    public function __construct(BeerId $id, BeerType $type, BeerRating $rating, BeerComments $comments, BeerRepository $repository)
-    {
+    public function __construct(
+        BeerId $id,
+        BeerType $type,
+        BeerRating $rating,
+        BeerComments $comments,
+        BeerRepository $repository
+    ) {
         $this->id = $id;
         $this->type = $type;
         $this->rating = $rating;

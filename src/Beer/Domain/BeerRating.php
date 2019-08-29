@@ -4,8 +4,7 @@ declare(strict_types=1);
 
 namespace TSwiackiewicz\PHPersSummit\Beer\Domain;
 
-use TSwiackiewicz\PHPersSummit\Beer\Shared\BeerException;
-use TSwiackiewicz\PHPersSummit\Beer\Shared\BeerId;
+use TSwiackiewicz\PHPersSummit\Beer\Shared\{BeerException, BeerId};
 
 /**
  * Domain concept representing rating (score) of given beer

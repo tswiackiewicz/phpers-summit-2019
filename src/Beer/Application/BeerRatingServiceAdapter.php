@@ -5,8 +5,7 @@ declare(strict_types=1);
 namespace TSwiackiewicz\PHPersSummit\Beer\Application;
 
 use TSwiackiewicz\PHPersSummit\Beer\Domain\BeerRating;
-use TSwiackiewicz\PHPersSummit\Beer\Shared\BeerException;
-use TSwiackiewicz\PHPersSummit\Beer\Shared\BeerId;
+use TSwiackiewicz\PHPersSummit\Beer\Shared\{BeerException, BeerId};
 use TSwiackiewicz\PHPersSummit\Rating\RatingService;
 
 /**
@@ -31,14 +30,14 @@ class BeerRatingServiceAdapter implements BeerRating
     {
         // success only when true is returned
         if ($this->ratingService->rate(
-            $beerId,
-            $rating,
-            null,
-            '',
-            false,
-            null,
-            true
-        ) === true) {
+                $beerId,
+                $rating,
+                null,
+                '',
+                false,
+                null,
+                true
+            ) === true) {
             return;
         }
 
