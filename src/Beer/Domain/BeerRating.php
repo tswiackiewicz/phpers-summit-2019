@@ -8,6 +8,8 @@ use TSwiackiewicz\PHPersSummit\Beer\Shared\{BeerException, BeerId};
 
 /**
  * Domain concept representing rating (score) of given beer
+ *
+ * TODO (refactoring?) move $beerId to class property
  */
 interface BeerRating
 {

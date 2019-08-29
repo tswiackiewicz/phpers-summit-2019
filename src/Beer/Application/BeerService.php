@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace TSwiackiewicz\PHPersSummit\Beer\Application;
 
 use TSwiackiewicz\PHPersSummit\Beer\Application\Command\{AddComment, RateBeer, SetBeerType};
+use TSwiackiewicz\PHPersSummit\Beer\Domain\BeerRepository;
 use TSwiackiewicz\PHPersSummit\Beer\Shared\BeerException;
 use TSwiackiewicz\PHPersSummit\User\Application\UserService;
 
@@ -16,10 +17,16 @@ class BeerService
     /** @var BeerFactory */
     private $factory;
 
-    public function __construct(UserService $userService, BeerFactory $factory)
+    /**
+     * @var BeerRepository
+     */
+    private $repository;
+
+    public function __construct(UserService $userService, BeerFactory $factory, BeerRepository $repository)
     {
         $this->userService = $userService;
         $this->factory = $factory;
+        $this->repository = $repository;
     }
 
     /**
@@ -32,6 +39,8 @@ class BeerService
 
         $beer = $this->factory->forId($command->beerId());
         $beer->setType($command->type(), $user->admin());
+
+        $this->repository->store($beer);
     }
 
     /**

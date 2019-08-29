@@ -34,8 +34,7 @@ class BeerFactory
             new BeerRatingServiceAdapter(
                 new RatingService()
             ),
-            new DisqusBeerComments($beerId),
-            $this->repository
+            new DisqusBeerComments($beerId)
         );
     }
 }
