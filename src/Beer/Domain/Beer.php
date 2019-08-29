@@ -24,12 +24,16 @@ class Beer
     /** @var BeerComments */
     private $comments;
 
-    public function __construct(BeerId $id, BeerType $type, BeerRating $rating, BeerComments $comments)
+    /** @var BeerRepository */
+    private $repository;
+
+    public function __construct(BeerId $id, BeerType $type, BeerRating $rating, BeerComments $comments, BeerRepository $repository)
     {
         $this->id = $id;
         $this->type = $type;
         $this->rating = $rating;
         $this->comments = $comments;
+        $this->repository = $repository;
     }
 
     /**
@@ -44,6 +48,8 @@ class Beer
         }
 
         $this->type->setType($type);
+
+        $this->repository->store($this);
     }
 
     /**
