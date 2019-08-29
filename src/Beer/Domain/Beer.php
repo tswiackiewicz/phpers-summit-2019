@@ -8,6 +8,9 @@ use TSwiackiewicz\PHPersSummit\Beer\Domain\Comment\{BeerComment, BeerComments};
 use TSwiackiewicz\PHPersSummit\Beer\Shared\{BeerException, BeerId};
 use TSwiackiewicz\PHPersSummit\Shared\Uuid;
 
+/**
+ * Beer aggregate representing particular beer, identified by BeerId (identity)
+ */
 class Beer
 {
     /** @var BeerId */

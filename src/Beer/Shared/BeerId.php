@@ -21,7 +21,7 @@ class BeerId
         return new self($uuid);
     }
 
-    public function uuid(): Uuid
+    public function id(): Uuid
     {
         return $this->id;
     }

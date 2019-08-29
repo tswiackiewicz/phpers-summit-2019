@@ -21,6 +21,7 @@ class BeerCommandFactory
 
     public function createAddComment(array $command): AddComment
     {
+        // required data hydration
         $user = $this->userService->forUsername($command['login']);
 
         return new AddComment(

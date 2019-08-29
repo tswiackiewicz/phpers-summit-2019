@@ -6,6 +6,9 @@ namespace TSwiackiewicz\PHPersSummit\Shared;
 
 use Ramsey\Uuid\Uuid as RamseyUuid;
 
+/**
+ * Example of concept (object) shared between multiple BC
+ */
 class Uuid
 {
     /** @var string */

@@ -26,6 +26,7 @@ class BeerException extends \Exception
         return new self("Unable to comment beer {(string)$beerId}", self::COMMENT_FAILURE);
     }
 
+    // TODO (refactoring?) move to BeerNotFoundException
     public static function notFound(BeerId $beerId): self
     {
         return new self("Beer does not exists {(string)$beerId}", self::NOT_FOUND);

@@ -9,7 +9,7 @@ use TSwiackiewicz\PHPersSummit\Beer\Shared\BeerException;
 use TSwiackiewicz\PHPersSummit\Shared\Uuid;
 
 /**
- * Sample implementation of BeerComments interface
+ * Sample implementation of BeerComments contract
  * Data is passed and retrieved from disqus.com using provided API
  */
 class DisqusBeerComments extends BeerComments

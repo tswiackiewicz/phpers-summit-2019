@@ -9,6 +9,11 @@ use TSwiackiewicz\PHPersSummit\Beer\Infrastructure\Comment\DisqusBeerComments;
 use TSwiackiewicz\PHPersSummit\Beer\Shared\{BeerException, BeerId};
 use TSwiackiewicz\PHPersSummit\Rating\RatingService;
 
+/**
+ * In this case BeerFactory is defined at Application Layer level because legacy service adapter (ACL) is used
+ * Factory can also be declared at Domain Layer or Infrastructure Layer level - it depends on which layers
+ * dependencies are used
+ */
 class BeerFactory
 {
     /** @var BeerRepository */
