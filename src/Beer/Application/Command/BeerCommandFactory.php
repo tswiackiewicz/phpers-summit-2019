@@ -24,10 +24,10 @@ class BeerCommandFactory
         $user = $this->userService->forUsername($command['login']);
 
         return new AddComment(
-            BeerId::fromUuid(new Uuid($command['beerId'])),
+            BeerId::fromUuid(Uuid::fromString($command['beerId'])),
             new BeerComment($command['comment']),
             $user->userId(),
-            $command['login']
+            (string)$user->login()
         );
     }
 }
