@@ -10,9 +10,10 @@ use TSwiackiewicz\PHPersSummit\Beer\Shared\BeerId;
 
 class DbBeerRepository implements BeerRepository
 {
-    public function getById(BeerId $beerId): Beer
+    public function getById(BeerId $beerId): array
     {
         // TODO: Implement getById() method.
+        return [];
     }
 
     public function store(Beer $beer): void
