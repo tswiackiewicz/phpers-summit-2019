@@ -15,5 +15,5 @@ interface BeerRepository
      */
     public function getById(BeerId $beerId): array;
 
-    public function store(Beer $beer): void;
+    public function storeType(BeerId $beerId, BeerType $type): void;
 }

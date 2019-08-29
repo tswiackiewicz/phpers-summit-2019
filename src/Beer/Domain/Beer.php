@@ -52,7 +52,7 @@ class Beer
 
         $this->type->setType($type);
 
-        $this->repository->store($this);
+        $this->repository->storeType($this->id, $this->type);
     }
 
     /**
@@ -73,15 +73,5 @@ class Beer
     public function addComment(BeerComment $comment, Uuid $userId, string $username): void
     {
         $this->comments->add($comment, $userId, $username);
-    }
-
-    public function id(): BeerId
-    {
-        return $this->id;
-    }
-
-    public function type(): BeerType
-    {
-        return $this->type;
     }
 }

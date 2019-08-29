@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace TSwiackiewicz\PHPersSummit\Beer\Infrastructure;
 
-use TSwiackiewicz\PHPersSummit\Beer\Domain\{Beer, BeerRepository};
+use TSwiackiewicz\PHPersSummit\Beer\Domain\{BeerRepository, BeerType};
 use TSwiackiewicz\PHPersSummit\Beer\Shared\BeerId;
 
 class DbBeerRepository implements BeerRepository
@@ -15,7 +15,7 @@ class DbBeerRepository implements BeerRepository
         return [];
     }
 
-    public function store(Beer $beer): void
+    public function storeType(BeerId $beerId, BeerType $type): void
     {
         // store beer's type at shared (between beer & type) database
     }
