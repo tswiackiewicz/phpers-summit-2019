@@ -9,6 +9,7 @@ class BeerException extends \Exception
     private const NOT_ALLOWED_FOR_NOT_ADMIN_USERS = 1234;
     private const RATING_FAILURE = 2345;
     private const COMMENT_FAILURE = 3456;
+    private const NOT_FOUND = 4567;
 
     public static function notAllowedForNotAdminUsers(): self
     {
@@ -23,5 +24,10 @@ class BeerException extends \Exception
     public static function commentFailure(BeerId $beerId): self
     {
         return new self("Unable to comment beer {(string)$beerId}", self::COMMENT_FAILURE);
+    }
+
+    public static function notFound(BeerId $beerId): self
+    {
+        return new self("Beer does not exists {(string)$beerId}", self::NOT_FOUND);
     }
 }
